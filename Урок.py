@@ -1,19 +1,13 @@
-line = input().split(" ")
-stack = []
-for char in line:
-    if char in ["+", "-", "*"]:
-        if char == "+":
-            a = stack.pop()
-            b = stack.pop()
-            stack.append(a + b)
-        elif char == "-":
-            a = stack.pop()
-            b = stack.pop()
-            stack.append(b - a)
-        elif char == "*":
-            a = stack.pop()
-            b = stack.pop()
-            stack.append(a * b)
-    else:
-        stack.append(int(char))
-print(stack.pop())
+a = input().lower().split()
+counts = {"a": ".-", "b": "-...", "c": "-.-.", "d": "-..", "e": ".", "f": "..-.", "g": "--.",
+          "h": "....", "i": "..", "j": ".---",
+          "k": "-.-", "l": ".-..", "m": "--", "n": "-.",
+          "o": "---", "p": ".--.", "q": "--.-", "r": ".-.", "s": "...", "t": "-",
+          "u": "..-", "v": "...-", "w": ".--", "x": "-..-", "y": "-.--", "z": "--.."
+          }
+answer = []
+for word in a:
+    for j in word:
+        answer.append(counts.get(j))
+    print(" ".join(answer))
+    answer = []
