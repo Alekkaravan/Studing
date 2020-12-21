@@ -1,3 +1,4 @@
+j = []
 dictionary = {}
 for i in range(int(input())):
     a = input().split()
@@ -6,5 +7,5 @@ for i in range(int(input())):
     dictionary[c] = b
 for i in range(int(input())):
     quiz = input()
-    a = dictionary.get(quiz)
-    print(a)
+    a = (dictionary.get(quiz, ""))
+    print("".join(a))
